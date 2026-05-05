@@ -31,18 +31,21 @@ const NavBar = () => {
         },
     ];
 
+    const [open, setOpen] = useState(true)
+
     return (
-        <nav className="flex justify-between">
-            <span className="flex">
-                <Menu className="block sm:hidden" />
-                <h3>My Navbar</h3>
+        <nav className="flex justify-between items-center relative py-3 px-5">
+            <span className="flex gap-3">
+                <Menu onClick={() => setOpen(!open)} className="md:hidden" />
+                <h3 className="text-lg">My Navbar</h3>
             </span>
-            <ul className="flex gap-4 justify-center">
+
+            <ul className={`gap-4 absolute left-5 top-full md:static md:border-none ${open && 'hidden'} md:flex bg-white  border border-gray-200 p-2 rounded-md`}>
                 {
                     navLinks.map(route => <Link key={route.id} route={route}></Link>)
                 }
             </ul>
-            <button>Sign In</button>
+            <button className="btn">Sign In</button>
         </nav>
     );
 };

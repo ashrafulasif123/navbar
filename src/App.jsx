@@ -3,12 +3,12 @@ import DaisyNav from './components/DaisyNav/DaisyNav'
 import NavBar from './components/NavBar/NavBar'
 
 function App() {
- 
-return (
+
+  return (
     <>
       <header>
         <NavBar></NavBar>
-        <DaisyNav></DaisyNav>
+        {/* <DaisyNav></DaisyNav> */}
       </header>
       <main>
 
